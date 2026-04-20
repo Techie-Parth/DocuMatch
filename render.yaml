@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: document-template-matcher-node
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: document-template-data
+      mountPath: /var/data
+      sizeGB: 1
